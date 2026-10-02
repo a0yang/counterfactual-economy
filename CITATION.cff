@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this project in research, please cite the repository and the specific model/data contributors you used."
+title: "Counterfactual Economy"
+type: software
+version: 0.1.0
+date-released: 2026-10-02
+url: "https://github.com/YOUR-USERNAME/counterfactual-economy"
+abstract: >-
+  An open-source platform for simulating alternative economic histories,
+  economic policies, financial systems and possible futures.
+authors:
+  - name: "Counterfactual Economy contributors"
+keywords:
+  - economics
+  - macroeconomics
+  - economic history
+  - agent-based modeling
+  - stock-flow consistent modeling
+  - simulation
+  - counterfactual analysis
+license: Apache-2.0

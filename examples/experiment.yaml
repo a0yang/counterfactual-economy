@@ -1,0 +1,27 @@
+experiment_id: example-counterfactual
+name: Example counterfactual experiment
+model:
+  version: 0.1
+  specification: minimal-macro
+information_set:
+  mode: vintage
+  cutoff: 2005-12-31
+data:
+  sources: []
+  dataset_version: example
+scenario:
+  baseline: historical
+  interventions:
+    - policy: mortgage_ltv_limit
+      historical_value: null
+      counterfactual_value: 0.70
+reproducibility:
+  random_seed: 42
+  runs: 1000
+outputs:
+  - gdp
+  - unemployment
+  - inflation
+  - household_debt
+  - housing_price_index
+  - banking_stress
