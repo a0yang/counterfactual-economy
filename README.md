@@ -1,52 +1,67 @@
-# Counterfactual Economy
-### An Open-Source Platform for Simulating Alternative Economic Histories
+<div align="center">
 
-> **Explore possible economic worlds — not a single predicted future.**
+<img src="assets/banner.png" alt="Counterfactual Economy — explore alternative histories, build better models, shape possible futures" width="100%">
+
+# Counterfactual Economy
+
+### An open-source platform for simulating alternative economic histories, policies, and possible futures.
+
+[![Status: Concept / Research Design](https://img.shields.io/badge/status-concept%20%2F%20research%20design-blue)](ROADMAP.md)
+[![License: Apache 2.0](https://img.shields.io/badge/code%20license-Apache--2.0-green.svg)](LICENSE)
+[![Discussions](https://img.shields.io/badge/community-GitHub%20Discussions-purple)](https://github.com/YOUR-USERNAME/counterfactual-economy/discussions)
+
+</div>
+
+> **What if governments had made different economic decisions?**
 
 Counterfactual Economy is an open-source project exploring whether historical economies can be reconstructed as transparent, extensible simulation systems.
 
-The long-term vision is to connect:
+The long-term vision is to connect historical and real-time data, economic mechanisms, heterogeneous agents, production and financial networks, policy decisions, uncertainty, and a lightweight 2D interface in one extensible platform.
 
-- historical and real-time economic data;
-- multiple economic theories and mechanisms;
-- households, firms, banks, governments and other agents;
-- production and trade networks;
-- financial balance sheets and contagion;
-- policy decisions;
-- uncertainty, Monte Carlo simulation and scenario analysis;
-- a 2D interactive interface and an extensible mod system.
+The same simulation core could eventually power both:
 
-The same simulation core could eventually power both a **historical economic simulation game** and an **open research / policy experimentation platform**.
-
----
+- a **historical economic simulation game**; and
+- an **open research / policy experimentation environment**.
 
 ## Why this project?
 
-History happened once, but the economic state of the world always contained multiple possible paths.
+History happened once, but the economic state of the world contained many possible paths.
 
-A government could have chosen a different interest-rate path. A regulator could have imposed a different mortgage standard. A country could have changed its tax policy, trade policy, industrial policy or capital controls.
+A government could have chosen a different interest-rate path. A regulator could have imposed a different mortgage standard. A country could have changed its tax policy, fiscal policy, trade policy, industrial policy, or capital controls.
 
 This project asks:
 
 > **What other plausible paths might have emerged under different decisions?**
 
-The project does not assume that a model can reveal a single “true” alternative history. Counterfactual results depend on data, model structure, parameters, expectations and assumptions.
+The goal is not to claim that a model can reveal one “true” alternative history. Counterfactual results depend on data, model structure, parameters, expectations, institutions, and assumptions.
 
-The goal is to make those assumptions explicit and computationally testable.
+The goal is to make those assumptions **explicit, reproducible, comparable, and testable**.
 
----
+## The first research challenge: 2008
 
-## Core research question
+The first flagship experiment is the **2000–2008 U.S. Financial Crisis Challenge**.
 
-One of the first major validation experiments is the **2000–2008 U.S. financial crisis challenge**:
+> Can a transparent model, using only information available at each historical point, identify rising systemic financial vulnerability before the Global Financial Crisis became fully visible?
 
-> Can a transparent model using only information that would have been available at each historical point identify rising systemic financial vulnerability before the 2008 crisis?
+We are **not** asking a model to guess an exact date, name a failed institution, or produce a single deterministic prediction. We want to test whether pre-crisis conditions generate measurable early-warning signals, and whether counterfactual policies change the distribution of outcomes.
 
-The project should not claim that a model can know the exact date of a crisis or the identity of a specific failed institution. A stronger and more reproducible test is whether pre-crisis conditions produce measurable changes in risk indicators, and whether counterfactual policies alter the distribution of outcomes.
+→ **[Read the full 2008 Challenge](docs/2008_CHALLENGE.md)**  
+→ **[Join / publish the challenge call](docs/2008_CHALLENGE_CALL.md)**
 
----
+## What we are building
 
-## High-level architecture
+| Layer | Purpose |
+|---|---|
+| Historical data | Reconstruct economies using time-appropriate information sets |
+| Economic core | Combine stock-flow consistency, agent behavior, production networks, and financial balance sheets |
+| Theory modules | Add mechanisms from multiple schools of economic thought without turning them into ideological “modes” |
+| Policy engine | Represent taxes, interest rates, regulation, fiscal policy, trade policy, and institutional rules |
+| Counterfactual engine | Run alternative histories and compare distributions of outcomes |
+| Validation | Compare simulations with historical data and out-of-sample periods |
+| 2D research/game UI | Make economic mechanisms visible without spending the compute budget on 3D graphics |
+| Mod system | Let contributors add countries, sectors, policies, mechanisms, datasets, and visualizations |
+
+## Architecture
 
 ```text
 Historical / Real-Time Data
@@ -79,203 +94,94 @@ Historical / Real-Time Data
          UI           UI
 ```
 
-The initial repository intentionally contains more design documentation than code. The first milestone is to establish a reproducible research problem before building a large user interface.
-
----
+See **[ARCHITECTURE.md](ARCHITECTURE.md)** for the current technical design and its open questions.
 
 ## Design principles
 
-### 1. Model first, graphics second
+### Model first, graphics second
 
-The first version should prioritize reproducible economic calculations over visual fidelity. A low-resolution 2D interface is sufficient.
+The first version should prioritize reproducible calculations over visual fidelity. A low-resolution 2D interface is enough.
 
-### 2. Multiple mechanisms, not ideological “modes”
+### Mechanisms, not ideological modes
 
-Economic theories should be represented as explicit mechanisms and interchangeable assumptions rather than a single winner-takes-all economic ideology.
+Economic theories should appear as explicit, testable mechanisms and assumptions that can be compared under the same historical conditions.
 
-### 3. Historical information sets matter
+### Historical information sets matter
 
-When replaying history, the simulation should avoid hindsight whenever the experiment is intended to reproduce what decision-makers could have known at the time. Historical data vintages are therefore a first-class concept.
+A simulation intended to reproduce what decision-makers could have known in 2005 should not quietly use revised data published years later. Historical data vintages are a first-class concept.
 
-### 4. Reality is an anchor, not a forced answer
+### Reality is an anchor, not a forced answer
 
-The historical record should be used to calibrate and validate the model and to measure divergence. The simulation should not silently overwrite player outcomes just because they differ from history.
+Historical data should calibrate and validate the model and measure divergence. The simulation should not silently overwrite a player's alternative history simply because it differs from reality.
 
-### 5. Uncertainty is a feature
+### Uncertainty is a feature
 
-Outputs should often be distributions, ranges and scenario trees rather than a single deterministic number.
+Prefer ranges, distributions, scenario trees, confidence/calibration measures, and model disagreement over false precision.
 
-### 6. Reproducibility is a product feature
+### Reproducibility is a product feature
 
-A serious experiment should be reconstructible from its dataset versions, parameters, model version, assumptions and random seed.
+A serious experiment should be reconstructible from data versions, parameters, model version, assumptions, and random seed.
 
-### 7. Falsification is valuable
+### Falsification is valuable
 
-A model that demonstrates why an approach does not work is a useful contribution.
+A result showing that a model does not work is a useful scientific contribution.
 
----
+## Long-term ambition
 
-## Long-term capabilities
+The platform could eventually support:
 
-### Historical simulation
+- historical simulations from the Industrial Revolution to the present;
+- country and multi-country economic systems;
+- sectoral production and trade networks;
+- household, firm, banking, and government agents;
+- financial contagion and crisis mechanisms;
+- real-time public-data adapters;
+- scenario exploration for current economic conditions;
+- research workflows that translate published assumptions into explicit model mechanisms;
+- a mod ecosystem for new theories, policies, countries, industries, crises, and visualizations.
 
-Start from a historical year and simulate forward using information and institutional conditions appropriate to the chosen date.
+The project is deliberately **not** positioned as a machine that predicts the future with certainty.
 
-### Counterfactual policy experiments
+Its purpose is to provide a computational laboratory for asking:
 
-Change a policy or institutional rule and compare the resulting path with the historical baseline.
-
-### Economic theory modules
-
-Potential modules include Keynesian demand mechanisms, New Keynesian rules, monetary mechanisms, financial accelerator effects, Minsky-style financial fragility, adaptive expectations, rational expectations and heterogeneous-agent behavior.
-
-### Financial crisis simulation
-
-Represent leverage, collateral, short-term funding, bank capital, securitization, liquidity shocks and network contagion.
-
-### Production and trade networks
-
-Model industries, supply chains, energy inputs, international trade and cross-industry propagation.
-
-### Real-time scenarios
-
-Connect current public data through licensed adapters and run forward-looking scenarios under explicit assumptions.
-
-### Modding
-
-Enable contributors to add countries, industries, policies, institutions, crisis mechanisms, datasets and visualizations without rewriting the simulation kernel.
-
----
-
-## Proposed first milestone: U.S. 2000–2008
-
-### Scope
-
-Initial agents:
-
-- households;
-- non-financial firms;
-- commercial banks;
-- government;
-- central bank.
-
-Initial variables:
-
-- GDP;
-- inflation;
-- unemployment;
-- interest rates;
-- household income;
-- household debt;
-- housing prices;
-- mortgage credit;
-- bank capital;
-- bank leverage;
-- government revenue and spending.
-
-Initial policy levers:
-
-- policy interest rate;
-- bank capital requirement;
-- mortgage LTV limit;
-- fiscal spending;
-- selected tax parameters.
-
-### Validation goal
-
-The model should be evaluated against historical data without using future information during the simulated period.
-
-### Success criteria
-
-A successful prototype should be:
-
-1. reproducible;
-2. transparent enough for a researcher to inspect assumptions;
-3. capable of reproducing broad pre-crisis relationships;
-4. capable of running controlled counterfactual experiments;
-5. explicit about where it fails.
-
----
-
-## Possible technology stack
-
-The technology stack is intentionally not fixed yet.
-
-A possible direction is:
-
-- **Python** for rapid prototyping, calibration and research workflows;
-- **Rust or C++** for performance-critical simulation components if needed;
-- **Godot** for a lightweight 2D client and visualization layer;
-- **SQLite / DuckDB / Parquet** for local research datasets;
-- standard scientific Python tools for statistics, optimization and analysis.
-
-The first contributors should be allowed to propose alternatives.
-
----
-
-## Who should contribute?
-
-The project is especially interested in people with experience in:
-
-- macroeconomics;
-- economic history;
-- computational economics;
-- agent-based modeling;
-- stock-flow consistent modeling;
-- system dynamics;
-- financial economics;
-- quantitative finance;
-- data engineering;
-- scientific computing;
-- Python, C++, Rust or similar languages;
-- 2D game development and visualization;
-- machine learning / AI for research workflows.
-
-You do not need to agree with every initial design choice. Critical discussion is explicitly welcome.
-
----
+> **What could have happened, and which assumptions make that result possible?**
 
 ## Current status
 
 **Stage: Concept / Research Design**
 
-There is no finished game and no validated general-purpose economic simulator yet.
+The repository currently contains the project architecture, research questions, data principles, the 2008 validation challenge, contribution workflows, and a roadmap. The first implementation milestone is intentionally small: build a reproducible U.S. 2000–2008 prototype before attempting a global historical simulation.
 
-The repository is intended to turn the concept into an open, testable and collaborative research program.
+## How to contribute
 
----
+You do **not** need to agree with the initial design. Criticism, alternative architectures, failed experiments, and competing models are welcome.
 
-## Roadmap
+Start here:
 
-See [ROADMAP.md](ROADMAP.md).
+- **[Contributing guide](CONTRIBUTING.md)**
+- **[Good first issues](docs/good-first-issues/README.md)**
+- **[Research questions](RESEARCH.md)**
+- **[Data specification](DATA.md)**
+- **[2008 Challenge](docs/2008_CHALLENGE.md)**
 
-Research questions are tracked in [RESEARCH.md](RESEARCH.md).
+If you are interested in the project but do not know where to start, open a Discussion and introduce your background.
 
-Architecture is described in [ARCHITECTURE.md](ARCHITECTURE.md).
+## Community
 
-Historical data and data-vintage requirements are described in [DATA.md](DATA.md).
+The project is intended to bring together people from:
 
----
+**macroeconomics · economic history · computational economics · agent-based modeling · stock-flow consistent modeling · financial economics · quantitative finance · data engineering · scientific computing · visualization · game development · AI research**
 
-## Project identity
-
-**Project name:** Counterfactual Economy  
-**Repository:** `counterfactual-economy`  
-**Primary language:** English  
-**Chinese documentation:** `README.zh-CN.md`
-
-Suggested GitHub description:
-
-> Open-source platform for simulating alternative economic histories, policies, financial systems and possible futures.
-
-Suggested topics:
-
-`economics` `macroeconomics` `economic-history` `agent-based-modeling` `sfc` `system-dynamics` `financial-crisis` `simulation` `counterfactual` `policy-analysis` `economic-game` `scientific-computing`
-
----
+See **[GOVERNANCE.md](GOVERNANCE.md)** and **[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)** for the community framework.
 
 ## License
 
-The initial software and documentation in this repository are released under the Apache License 2.0 unless a file states otherwise.
+Software is released under **Apache License 2.0**. Documentation and other non-code materials may use the licenses stated in their respective files. External datasets remain subject to their original licenses; see **[DATA.md](DATA.md)**.
 
-Third-party data and external research materials remain subject to their original licenses. See [DATA.md](DATA.md).
+---
+
+<div align="center">
+
+**Different policies. Different mechanisms. Different possible histories.**
+
+</div>

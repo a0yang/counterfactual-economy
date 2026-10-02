@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local datasets / generated results
+/data/raw/
+/data/cache/
+/results/
+/output/
+
+# Simulation caches
+*.parquet.tmp
+*.sqlite-shm
+*.sqlite-wal
