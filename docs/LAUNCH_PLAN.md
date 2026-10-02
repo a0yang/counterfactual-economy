@@ -59,3 +59,14 @@ The project should reward explanation, reproducibility and robustness rather tha
 > We are especially interested in people working in computational economics, macro-finance, ABM/SFC modeling, scientific computing and economic data.
 >
 > Critical feedback is welcome. The project is intentionally not claiming that one model can predict the future.
+
+## Launch assets
+
+The first public launch package now includes:
+
+- `assets/banner.png` — README/project banner;
+- `docs/LAUNCH_POST.md` — long-form and short-form recruitment copy;
+- `docs/2008_CHALLENGE_CALL.md` — dedicated research recruitment post;
+- `docs/good-first-issues/` — first twelve bounded starter tasks.
+
+The recommended launch sequence is to publish the repository first, then share the short recruitment version together with the 2008 Challenge. Keep the first public discussion focused on the research question and the smallest reproducible milestone rather than the full long-term game vision.
